@@ -1,9 +1,9 @@
 metadata={
 	"headers":{'Content-Type':'application/json'},
-	"base_url":"https://<f5_ip>/mgmt/tm/ltm/",
-	"username":"<username>",
-	"password":"<password>",
-	"TopicArn":"<sns_topic_arn>",
+	"base_url":"https://<f5_ip>/mgmt/tm/ltm/", #public ip of your F5 box
+	"username":"<username>", # F5 console username
+	"password":"<password>", #F5 console password
+	"TopicArn":"<sns_topic_arn>",# SNS topic ARN created for AutoScaling group HTTP notification
 	"launch_event":"autoscaling:EC2_INSTANCE_LAUNCH",
 	"launch_fail_event":"autoscaling:EC2_INSTANCE_LAUNCH_ERROR",
 	"terminate_event":"autoscaling:EC2_INSTANCE_TERMINATE",
@@ -17,8 +17,8 @@ metadata={
 
 mapping={
 
-"akash_temp_as":{
-	"pools":["pool_1","pool_2"],
+"<autoscaling_group_name>":{ # AS Group name as it appears on the AWS console
+	"pools":["<F5 pool 1 name>","<F5 pool 2 name>"], # List of F5 pools this node should belong.
 	"node_attributes":{
 		"partition":"Common",
 		"connectionLimit":0, 
@@ -30,5 +30,7 @@ mapping={
 		"port":"80"		
 		}
 	}
+# ......
+# Keep adding more AS Groups to this mapping object
 
 }
