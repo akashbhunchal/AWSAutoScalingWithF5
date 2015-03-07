@@ -24,6 +24,6 @@ Just select the Autoscaling group in the AS console. Go to the Notifications tab
 
 **python app.py**
 
-The application run of port 5000 by default. Health Check url is / and the scaling endpoint is /scale which accepts JSON input which the AWS SNS send to it. 
+The application run of port 5000 by default. Health Check url is **/** and the scaling endpoint is **/scale** which accepts JSON input which the AWS SNS send to it. 
 
  
