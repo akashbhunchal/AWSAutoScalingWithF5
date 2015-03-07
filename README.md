@@ -18,11 +18,11 @@ Just select the Autoscaling group in the AS console. Go to the Notifications tab
 
 ### How to setup:
 
-** properties.py ** file contains all the metadata/mapping that this aplication needs to know which pool to add/remove node to/from. Modify these attributes accordingly.
+**properties.py** file contains all the metadata/mapping that this aplication needs to know which pool to add/remove node to/from. Modify these attributes accordingly.
 
 ### How to run:
 
-** python app.py **
+**python app.py**
 
 The application run of port 5000 by default. Health Check url is / and the scaling endpoint is /scale which accepts JSON input which the AWS SNS send to it. 
 
